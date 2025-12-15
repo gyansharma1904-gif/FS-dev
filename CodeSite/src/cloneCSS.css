@@ -1,0 +1,41 @@
+
+  .sec-flex{
+    display:flex ;
+    justify-content:center;
+  }
+  .sec-flex button{
+    margin-top:20px;
+    border-style:solid; 
+    border-width:0px;
+    width: 200px;
+    border-radius:20px;
+  }
+  .img2 {
+    display: block;
+    margin: auto;
+    width: 50%;
+  }
+  .centeri {
+    display:block;
+    margin:auto;
+    border-radius:20px;
+    width: 70%;
+    border-style: solid;
+    padding: 10px;
+  }
+  .divb {
+    display:block;
+    margin:auto;
+    width: 30%;
+    border-style: none;
+    padding-left:50px;
+  }  
+  .centerb{
+    display:inline-block;
+    border-style: none;
+    margin-block: 20px;
+    width:40%;
+  }  
+  p {
+    text-align: center;
+  }

@@ -1,0 +1,26 @@
+
+body {
+  background-color: pink;
+  display: flex;
+  justify-content: center;
+}
+#Hero {
+  display: flex;
+  flex-direction:column;
+  border:1px solid black;
+  text-align:center ;
+  color:lightgreen;
+  background-color: green ;
+  width:50%;
+  height:50%;
+  margin: 10px 20px 10px 20px;
+  padding: 50px;
+} 
+
+.button1{
+  margin: 5px ;
+  background-color: lightgreen ;
+  color: green;
+  border: none;
+  height:30px;
+}

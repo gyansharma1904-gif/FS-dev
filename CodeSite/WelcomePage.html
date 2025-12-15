@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CattleEye - Buffalo Breed Identification</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const fileInput = document.querySelector("#fileInput");
+  const resultDiv = document.querySelector("#result");
+  const uploadBtn = document.querySelector("#uploadBtn");
+
+  uploadBtn.addEventListener("click", async () => {
+    const file = fileInput.files[0];
+    if (!file) {
+      alert("Please select an image first!");
+      return;
+    }
+
+    // Prepare form data
+    const formData = new FormData();
+    formData.append("image", file);
+
+    try {
+      // Send to Flask backend
+      const response = await fetch("http://127.0.0.1:5000/predict", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!response.ok) throw new Error("Prediction failed!");
+
+      const data = await response.json();
+
+      // Display result
+      resultDiv.innerHTML = `
+        <div class="bg-green-50 border-l-4 border-green-600 p-6 rounded-lg shadow-md mt-4">
+          <h4 class="text-xl font-semibold text-green-800">
+            Predicted Breed: <span class="font-bold">${data.breed}</span>
+          </h4>
+          <p class="text-gray-700 mt-2">
+            Confidence: <span class="font-bold">${(data.confidence * 100).toFixed(2)}%</span>
+          </p>
+        </div>
+      `;
+    } catch (error) {
+      resultDiv.innerHTML = `
+        <p class="text-red-600 mt-4">❌ Error: ${error.message}</p>
+      `;
+    }
+  });
+});
+</script>
+
+</head>
+<body class="bg-gray-50 font-roboto">
+
+  <!-- Navbar -->
+  <nav class="bg-green-700 p-4 flex justify-between items-center text-white shadow-lg">
+    <h1 class="text-2xl font-bold">🐃 CattleEye</h1>
+    <div>
+      <a href="#" class="px-4 hover:text-yellow-300">Home</a>
+      <a href="#" class="px-4 hover:text-yellow-300">Database</a>
+      <a href="#" class="px-4 hover:text-yellow-300">Dashboard</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="text-center py-16 bg-green-100">
+    <h2 class="text-4xl font-bold text-green-800">AI-Powered Buffalo Breed Identification</h2>
+    <p class="mt-4 text-gray-700">Upload a buffalo image and let AI identify its breed in seconds!</p>
+    <button class="mt-6 px-6 py-3 bg-green-700 text-white rounded-lg shadow-lg hover:bg-green-800">
+      Try Now
+    </button>
+  </section>
+
+  <!-- Upload Section 
+  <section class="max-w-3xl mx-auto p-8 bg-white shadow-2xl rounded-2xl mt-10">
+    <h3 class="text-2xl font-bold text-gray-800 mb-4">Upload Buffalo Image</h3>
+    <input type="file" class="block w-full border border-gray-300 p-3 rounded-lg mb-6" /> 
+    -->
+    <section class="max-w-3xl mx-auto p-8 bg-white shadow-2xl rounded-2xl mt-10">
+  <h3 class="text-2xl font-bold text-gray-800 mb-4">Upload Buffalo Image</h3>
+  <input type="file" id="fileInput" class="block w-full border border-gray-300 p-3 rounded-lg mb-4" />
+  <button id="uploadBtn" class="px-6 py-3 bg-green-700 text-white rounded-lg shadow-lg hover:bg-green-800">
+    Upload & Identify
+  </button>
+  <div id="result"></div>
+</section>
+
+    <!-- Result Card -->
+    <div class="bg-green-50 border-l-4 border-green-600 p-6 rounded-lg shadow-md">
+      <h4 class="text-xl font-semibold text-green-800">Predicted Breed: <span class="font-bold">Murrah</span></h4>
+      <p class="text-gray-700 mt-2">Confidence: <span class="font-bold">94%</span></p>
+      <button class="mt-4 px-4 py-2 bg-green-700 text-white rounded-lg hover:bg-green-800">View Breed Info</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white text-center py-6 mt-12">
+    <p>© 2025 CattleEye | Developed by Harshinder Singh</p>
+  </footer>
+
+</body>
+</html>

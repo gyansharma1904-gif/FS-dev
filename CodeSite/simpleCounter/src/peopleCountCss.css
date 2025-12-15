@@ -1,0 +1,22 @@
+#Hero {
+  text-align:center;
+  background-color: pink;
+}
+
+
+button{
+  border: 1px solid white;
+  color:black ;
+  border-radius: 10px;
+  width: 100px;
+  height: 35px;
+  box-shadow:1px 3px 10px;
+}
+
+#increment-btn {
+  background-color: #A2977dff;
+}
+
+#save-btn {
+  background-color:lightgreen;
+}
