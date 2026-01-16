@@ -1,0 +1,57 @@
+body {
+  background-color: lightblue;
+  text-align: center;
+}
+
+#Hero {
+  display: flex ;
+  justify-content:center;
+  
+}
+
+.team {
+  display: flex ;
+  justify-content:center;
+  flex-direction: column;
+  align-items: center;
+  border: dotted ;
+  width: 400px;
+  height: 600px;
+}
+
+.scoreboard {
+  color: red;
+  background-color: black;
+  border:1px solid black ;
+  border-radius: 20px;
+  box-shadow:1px 3px 5px ;
+  width: 200px;
+  height: 200px;
+  padding:0px 0px 50px 0px ;
+}
+
+.totalscore{
+  font-size:100px;
+}
+
+.scorebutton {
+  border: 1px solid white ;
+  border-radius: 20px;
+   box-shadow:1px 3px 5px ;
+   margin: 20px;
+  width: 50px;
+  height: 50px;
+  
+}
+
+.score{
+  margin-top:10px;
+  
+}
+
+.timer {
+  display: flex ;
+  justify-content:center;
+  flex-direction: column;
+}
+

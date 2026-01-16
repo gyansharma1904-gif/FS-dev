@@ -1,0 +1,43 @@
+
+body{
+  margin: 0px;
+  color:#A2977dff;
+  font-family: "Tektur", sans-serif;
+  text-align:center;
+  
+}
+
+#Hero{
+  background-image:url("../img/bgImg.jpeg");
+  background-size: cover;
+  padding: 10px 0px 40px 0px;
+  
+}
+
+button{
+  background-color: #A2977dff;
+  border: 1px solid white ;
+  font-family: "Tektur", sans-serif;
+  border-radius: 10px;
+  width: 10%;
+  height: 35px;
+}
+
+.h1{
+  font-size: 70px;
+}
+
+#logo {
+  margin-top:50px;
+  width: 250px;
+  height: 110px;
+}
+
+
+
+/* CSS HEX */
+--khaki: #a2977dff;
+--rich-black: #0d1c29ff;
+--rich-black-2: #0c1829ff;
+--charcoal: #2b3d4dff;
+--rich-black-3: #081223ff;

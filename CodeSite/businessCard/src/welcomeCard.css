@@ -1,0 +1,47 @@
+body {
+  background-color:lightgrey;
+  display: flex;
+  justify-content: center;
+  padding-top:100px;
+  align-items: center;
+}
+
+.card {
+  background-color: white ;
+  border:none ;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow:1px 3px 5px ;
+  width:500px;
+  height: 350px;
+  padding:10px 20px 10px 50px ;
+  
+}
+
+.inCard {
+  border:none ;
+  display: flex;
+  flex-direction:row ;
+  justify-items: center;
+  box-shadow:0px 0px 2px ;
+  width:450px;
+  height: 200px;
+}
+
+.CPath{
+  background-color: #625336ff ;
+  text-align:right ;
+}
+
+
+
+
+/* CSS HEX */
+#color {
+--sunset: #E7CCA6ff;
+--field-drab: #625336ff;
+--earth-yellow: #D2A962ff;
+--eerie-black: #211E1Bff;
+--bistre: #2F1F08ff;
+}
