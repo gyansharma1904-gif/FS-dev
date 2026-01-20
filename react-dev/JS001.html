@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title> JS ES6+ Features</title>
+    <!--<link rel="stylesheet" href="indexCss.css">
+    -->
+    
+  </head>
+  <script >
+     var a = "25";
+     console.log (a)
+     let z= 25;//no re-declaration and re-initalisation
+     console.log (z)
+     const y =30;//no re-declaration
+     console.log (y)
+     // y= 49;
+     console.log (y)
+     
+     //
+     //arrow function
+     
+     
+     //normal function
+     function bingo(){
+        const a1=5;
+        console.log(a1)
+        
+     }
+     bingo();//calling function
+     
+     function bingo(a2){
+        const a1=5;
+        console.log(a1)
+        console.log(a2)
+     }
+     bingo();
+     let f1= (name)=>{console.log(name)}
+     f1("gyan");
+     console.log(f1)//error
+     document.write(f1);
+     
+     let add = (a,b)=>{
+        return a+b;}
+     let m= add(5,23);
+     console.log(m);
+     
+     
+     let f2= function(name){console.log(name)}
+     f2("gyan");
+     console.log(f2)//error
+     let add2=(a,b)=>{
+        return a+b;}
+     let m2= add2(5,23);
+     console.log(m2);
+     let add3=(a,b,c)=> a+b+c 
+     let m3= add3(5,23,33);
+     console.log(m3);
+     
+     let arr1=[1,2,3,4,5];
+     let arr2=arr1;
+     arr2[2]=100;
+     console.log(arr1)
+     let arr3=[...arr];
+     
+     
+  </script>
+  
+
+
+  <body>
+     <h1>VJS ES6+ Features</h1>
+    
+  </body>
+</html>

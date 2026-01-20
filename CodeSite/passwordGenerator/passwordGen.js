@@ -8,20 +8,19 @@ function createPassword() {
    let pass1;
    let pass2;
 
-   let password = [pass1,
-      pass2];
+   let password = ["", ""];
    //let password2 = "";
 
    for (let i = 0; i < length; i++) {
-      const randomIndex1 = Math.floor(Math.random() * characters.length);
+      let randomIndex1 = Math.floor(Math.random() * characters.length);
       password[0] += characters[randomIndex1];
-      const randomIndex2 = Math.floor(Math.random() * characters.length);
+      let randomIndex2 = Math.floor(Math.random() * characters.length);
       password[1] += characters[randomIndex2];
    }
 
 
-   //document.getElementById("pass1-el").innerText = password1
-   //document.getElementById("pass2-el").innerText = password2
+   document.getElementById("pass1-el").innerText = password[0];
+   document.getElementById("pass2-el").innerText = password[1]
    return password;
 
 }
