@@ -1,7 +1,7 @@
 let intputBtn = document.getElementById("save-btn")
-let mylead = ["apple", " gyan", "cool", " bingo"]
+let mylead = []
 const ulEl = document.getElementById("ul-el")
-let inputtext= document.getElementById("input-el")
+let inputtext = document.getElementById("input-el")
 
 intputBtn.addEventListener (
    "click",
@@ -9,24 +9,27 @@ intputBtn.addEventListener (
       console.log("button clicked from addEventListener")
       const inputValue = document.getElementById("input-el").value;
       mylead.push(inputValue);
-      inputtext.value=""
+      inputtext.value = ""
+      ulEl.innerHTML = "<br>";
       render();
       //console.log(mylead)
-      
+
    }
 )
 
 function render() {
    console.log("gyan button")
-   ulEl.innerHTML = "<br>";
-   let list = ""
+   //ulEl.innerHTML = "<br>";
+   let list = "<li> <a href='" + mylead[i] +"'>" +mylead[i] + "</a></li>"
+   ulEl.innerHTML += list
 
-   for (let i = 0; i < mylead.length; i++) {
-      list += "<li>" +mylead[i]+"</li>"
-      ulEl.innerHTML = list
-      //console.log(mylead[i])
-   }
-   
+   //let list = ""
+   //for (let i = 0; i < mylead.length; i++) {
+   //list += "<li>" +mylead[i]+"</li>"
+   //ulEl.innerHTML = list
+   //console.log(mylead[i])
+   //}
+
 }
 
 
@@ -40,10 +43,11 @@ inputbtn2.addEventListener(
       for (let i = 0; i < mylead.length; i++) {
          list += "<li>" +mylead[i]+"</li>"
          ulEl.innerHTML = list
-         //console.log(mylead[i])
+         console.log(mylead[i])
       }
-   })
-
+   }
+)
+/*
 let inputbtn3 = document.getElementById("btn3-el");
 const pEL = document.getElementById("p-el");
 inputbtn3.addEventListener(
@@ -65,3 +69,6 @@ inputbtn4.addEventListener(
       }
    }
 )
+
+
+*/

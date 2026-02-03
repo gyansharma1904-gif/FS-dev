@@ -1,0 +1,442 @@
+[33mcommit d125e8dee31d4022de3b9ae24cd25181a764a030[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mFS-devB001[m[33m, [m[1;31morigin/FS-devB001[m[33m)[m
+Author: gyansharma1904-gif <gyansharma1904@gmail.com>
+Date:   Tue Jan 20 17:45:24 2026 +0530
+
+    adding react learning file (in the journey to become a app devloper)
+
+[1mdiff --git a/CodeSite/extentions/index.js b/CodeSite/extentions/index.js[m
+[1mnew file mode 100644[m
+[1mindex 0000000..9c38bee[m
+[1m--- /dev/null[m
+[1m+++ b/CodeSite/extentions/index.js[m
+[36m@@ -0,0 +1,67 @@[m
+[32m+[m[32mlet intputBtn = document.getElementById("save-btn")[m
+[32m+[m[32mlet mylead = ["apple", " gyan", "cool", " bingo"][m
+[32m+[m[32mconst ulEl = document.getElementById("ul-el")[m
+[32m+[m[32mlet inputtext= document.getElementById("input-el")[m
+[32m+[m
+[32m+[m[32mintputBtn.addEventListener ([m
+[32m+[m[32m   "click",[m
+[32m+[m[32m   function() {[m
+[32m+[m[32m      console.log("button clicked from addEventListener")[m
+[32m+[m[32m      const inputValue = document.getElementById("input-el").value;[m
+[32m+[m[32m      mylead.push(inputValue);[m
+[32m+[m[32m      inputtext.value=""[m
+[32m+[m[32m      render();[m
+[32m+[m[32m      //console.log(mylead)[m
+[32m+[m[41m      [m
+[32m+[m[32m   }[m
+[32m+[m[32m)[m
+[32m+[m
+[32m+[m[32mfunction render() {[m
+[32m+[m[32m   console.log("gyan button")[m
+[32m+[m[32m   ulEl.innerHTML = "<br>";[m
+[32m+[m[32m   let list = ""[m
+[32m+[m
+[32m+[m[32m   for (let i = 0; i < mylead.length; i++) {[m
+[32m+[m[32m      list += "<li>" +mylead[i]+"</li>"[m
+[32m+[m[32m      ulEl.innerHTML = list[m
+[32m+[m[32m      //console.log(mylead[i])[m
+[32m+[m[32m   }[m
+[32m+[m[41m   [m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m[32mlet inputbtn2 = document.getElementById("btn2-el")[m
+[32m+[m[32minputbtn2.addEventListener([m
+[32m+[m[32m   "click", function() {[m
+[32m+[m[32m      console.log("gyan button")[m
+[32m+[m[32m      ulEl.innerHTML = "<br>";[m
+[32m+[m[32m      let list = ""[m
+[32m+[m
+[32m+[m[32m      for (let i = 0; i < mylead.length; i++) {[m
+[32m+[m[32m         list += "<li>" +mylead[i]+"</li>"[m
+[32m+[m[32m         ulEl.innerHTML = list[m
+[32m+[m[32m         //console.log(mylead[i])[m
+[32m+[m[32m      }[m
+[32m+[m[32m   })[m
+[32m+[m
+[32m+[m[32mlet inputbtn3 = document.getElementById("btn3-el");[m
+[32m+[m[32mconst pEL = document.getElementById("p-el");[m
+[32m+[m[32minputbtn3.addEventListener([m
+[32m+[m[32m   "click", function() {[m
+[32m+[m[32m      pEL.innerHTML = "<p>"+"thanks for buying"+"</p>";[m
+[32m+[m[32m   }[m
+[32m+[m[32m)[m
+[32m+[m
+[32m+[m[32mlet inputbtn4 = document.getElementById("btn4-el");[m
+[32m+[m[32mconst ulEl2 = document.getElementById("ul2-el");[m
+[32m+[m[32m//const pEL = document.getElementById("p-el");[m
+[32m+[m[32minputbtn4.addEventListener([m
+[32m+[m[32m   "click", function() {[m
+[32m+[m[32m      ulEl2.innerHTML = "<br>";[m
+[32m+[m[32m      for (let i = 0; i < mylead.length; i++) {[m
+[32m+[m[32m         const li = document.createElement("li")[m
+[32m+[m[32m         li.textContent = mylead[i][m
+[32m+[m[32m         ulEl2.append(li)[m
+[32m+[m[32m      }[m
+[32m+[m[32m   }[m
+[32m+[m[32m)[m
+\ No newline at end of file[m
+[1mdiff --git a/CodeSite/extentions/index1.html b/CodeSite/extentions/index1.html[m
+[1mnew file mode 100644[m
+[1mindex 0000000..d5ccd5b[m
+[1m--- /dev/null[m
+[1m+++ b/CodeSite/extentions/index1.html[m
+[36m@@ -0,0 +1,34 @@[m
+[32m+[m[32m<!DOCTYPE HTML>[m
+[32m+[m[32m<html>[m
+[32m+[m[32m  <head>[m
+[32m+[m[32m    <title>Extention Page</title>[m
+[32m+[m[32m    <link rel="stylesheet" href="index1CSS.css">[m
+[32m+[m[41m    [m
+[32m+[m[41m    [m
+[32m+[m[32m  </head>[m
+[32m+[m[41m [m
+[32m+[m[41m  [m
+[32m+[m[32m  <body>[m
+[32m+[m[32m     <input type="text" id="input-el" >[m
+[32m+[m[32m     <button id="save-btn" >save</button>[m
+[32m+[m[41m     [m
+[32m+[m[41m     [m
+[32m+[m[32m     <br> <br>[m
+[32m+[m[32m     <button  id="btn2-el"  >show list by 1</button>[m
+[32m+[m[32m     <ul id="ul-el">[m[41m [m
+[32m+[m[32m        cool[m
+[32m+[m[32m     </ul>[m
+[32m+[m[41m     [m
+[32m+[m[32m     <button  id="btn3-el"  >buy</button>[m
+[32m+[m[32m      <div id="p-el"></div>[m
+[32m+[m[41m      [m
+[32m+[m[41m      [m
+[32m+[m[32m      <button  id="btn4-el"  >show list by 2</button>[m
+[32m+[m[32m      <ul id="ul2-el">[m[41m [m
+[32m+[m[41m        [m
+[32m+[m[32m     </ul>[m
+[32m+[m
+[32m+[m[32m      <script src="index.js">[m
+[32m+[m[32m  </script>[m
+[32m+[m[32m  </body>[m
+[32m+[m[32m</html>[m
+\ No newline at end of file[m
+[1mdiff --git a/CodeSite/extentions/index1CSS.css b/CodeSite/extentions/index1CSS.css[m
+[1mnew file mode 100644[m
+[1mindex 0000000..b17feb5[m
+[1m--- /dev/null[m
+[1m+++ b/CodeSite/extentions/index1CSS.css[m
+[36m@@ -0,0 +1,26 @@[m
+[32m+[m[32mbody {[m
+[32m+[m[32m   display: flex;[m
+[32m+[m[32m   flex-direction:column ;[m
+[32m+[m[32m   margin: 10px;[m
+[32m+[m[32m   padding: 10px;[m
+[32m+[m[32m   background-color: pink;[m
+[32m+[m[32m   justify-content: center;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32minput {[m
+[32m+[m[32m   width: 100%;[m
+[32m+[m[32m   padding: 10px 0px;[m
+[32m+[m[32m   box-sizing: border-box;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mbutton {[m
+[32m+[m[32m   border-radius: 5px;[m
+[32m+[m[32m   margin: 10px 10px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.btn2 {[m
+[32m+[m[32m   width: 100%;[m
+[32m+[m[32m   height: 50px;[m
+[32m+[m[32m   padding: 10px 0px;[m
+[32m+[m[32m   box-sizing: border-box;[m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/CodeSite/passwordGenerator/passwordGen.html b/CodeSite/passwordGenerator/passwordGen.html[m
+[1mindex 9f3fa0b..845b914 100644[m
+[1m--- a/CodeSite/passwordGenerator/passwordGen.html[m
+[1m+++ b/CodeSite/passwordGenerator/passwordGen.html[m
+[36m@@ -27,9 +27,15 @@[m
+          <!-- <button class="button1" onclick="" value = "">copy</button>[m
+          -->[m
+       </div>[m
+[31m-      <div class="passwordBlock">[m
+[31m-         <P id="pass1-el" class="pass" value="1">password 1</P>[m
+[31m-         <P id="pass2-el" class="pass" value="2">password 2</P>[m
+[32m+[m[32m      <div >[m
+[32m+[m[32m         <div class="passwordBlock">[m
+[32m+[m[32m            <P id="pass1-el" class="pass" > password 1</P>[m
+[32m+[m[32m            <button class="button1" onclick="copy1()" value = "">copy</button>[m
+[32m+[m[32m         </div>[m
+[32m+[m[32m         <div class="passwordBlock">[m
+[32m+[m[32m            <P id="pass2-el" class="pass" > password 2</P>[m
+[32m+[m[32m            <button class="button1" onclick="copy2()" value = "">copy</button>[m
+[32m+[m[32m         </div>[m
+       </div>[m
+       <p>here is your new passwords</p>[m
+       [m
+[1mdiff --git a/CodeSite/passwordGenerator/passwordGen.js b/CodeSite/passwordGenerator/passwordGen.js[m
+[1mindex f660c15..3297b63 100644[m
+[1m--- a/CodeSite/passwordGenerator/passwordGen.js[m
+[1m+++ b/CodeSite/passwordGenerator/passwordGen.js[m
+[36m@@ -8,20 +8,19 @@[m [mfunction createPassword() {[m
+    let pass1;[m
+    let pass2;[m
+ [m
+[31m-   let password = [pass1,[m
+[31m-      pass2];[m
+[32m+[m[32m   let password = ["", ""];[m
+    //let password2 = "";[m
+ [m
+    for (let i = 0; i < length; i++) {[m
+[31m-      const randomIndex1 = Math.floor(Math.random() * characters.length);[m
+[32m+[m[32m      let randomIndex1 = Math.floor(Math.random() * characters.length);[m
+       password[0] += characters[randomIndex1];[m
+[31m-      const randomIndex2 = Math.floor(Math.random() * characters.length);[m
+[32m+[m[32m      let randomIndex2 = Math.floor(Math.random() * characters.length);[m
+       password[1] += characters[randomIndex2];[m
+    }[m
+ [m
+ [m
+[31m-   //document.getElementById("pass1-el").innerText = password1[m
+[31m-   //document.getElementById("pass2-el").innerText = password2[m
+[32m+[m[32m   document.getElementById("pass1-el").innerText = password[0];[m
+[32m+[m[32m   document.getElementById("pass2-el").innerText = password[1][m
+    return password;[m
+ [m
+ }[m
+[1mdiff --git a/CodeSite/passwordGenerator/src/passwordGen.css b/CodeSite/passwordGenerator/src/passwordGen.css[m
+[1mindex 173c344..ea0bac2 100644[m
+[1m--- a/CodeSite/passwordGenerator/src/passwordGen.css[m
+[1m+++ b/CodeSite/passwordGenerator/src/passwordGen.css[m
+[36m@@ -26,7 +26,7 @@[m [mbody {[m
+ [m
+ .passwordBlock{[m
+    display: flex;[m
+[31m-   padding: 20px;[m
+[32m+[m[32m   padding: 10px;[m
+   flex-direction:row ;[m
+   justify-content: space-around ;[m
+ }[m
+[1mdiff --git a/react-dev/JS001.html b/react-dev/JS001.html[m
+[1mnew file mode 100644[m
+[1mindex 0000000..73070fc[m
+[1m--- /dev/null[m
+[1m+++ b/react-dev/JS001.html[m
+[36m@@ -0,0 +1,74 @@[m
+[32m+[m[32m<!DOCTYPE HTML>[m
+[32m+[m[32m<html>[m
+[32m+[m[32m  <head>[m
+[32m+[m[32m    <title> JS ES6+ Features</title>[m
+[32m+[m[32m    <!--<link rel="stylesheet" href="indexCss.css">[m
+[32m+[m[32m    -->[m
+[32m+[m[41m    [m
+[32m+[m[32m  </head>[m
+[32m+[m[32m  <script >[m
+[32m+[m[32m     var a = "25";[m
+[32m+[m[32m     console.log (a)[m
+[32m+[m[32m     let z= 25;//no re-declaration and re-initalisation[m
+[32m+[m[32m     console.log (z)[m
+[32m+[m[32m     const y =30;//no re-declaration[m
+[32m+[m[32m     console.log (y)[m
+[32m+[m[32m     // y= 49;[m
+[32m+[m[32m     console.log (y)[m
+[32m+[m[41m     [m
+[32m+[m[32m     //[m
+[32m+[m[32m     //arrow function[m
+[32m+[m[41m     [m
+[32m+[m[41m     [m
+[32m+[m[32m     //normal function[m
+[32m+[m[32m     function bingo(){[m
+[32m+[m[32m        const a1=5;[m
+[32m+[m[32m        console.log(a1)[m
+[32m+[m[41m        [m
+[32m+[m[32m     }[m
+[32m+[m[32m     bingo();//calling function[m
+[32m+[m[41m     [m
+[32m+[m[32m     function bingo(a2){[m
+[32m+[m[32m        const a1=5;[m
+[32m+[m[32m        console.log(a1)[m
+[32m+[m[32m        console.log(a2)[m
+[32m+[m[32m     }[m
+[32m+[m[32m     bingo();[m
+[32m+[m[32m     let f1= (name)=>{console.log(name)}[m
+[32m+[m[32m     f1("gyan");[m
+[32m+[m[32m     console.log(f1)//error[m
+[32m+[m[32m     document.write(f1);[m
+[32m+[m[41m     [m
+[32m+[m[32m     let add = (a,b)=>{[m
+[32m+[m[32m        return a+b;}[m
+[32m+[m[32m     let m= add(5,23);[m
+[32m+[m[32m     console.log(m);[m
+[32m+[m[41m     [m
+[32m+[m[41m     [m
+[32m+[m[32m     let f2= function(name){console.log(name)}[m
+[32m+[m[32m     f2("gyan");[m
+[32m+[m[32m     console.log(f2)//error[m
+[32m+[m[32m     let add2=(a,b)=>{[m
+[32m+[m[32m        return a+b;}[m
+[32m+[m[32m     let m2= add2(5,23);[m
+[32m+[m[32m     console.log(m2);[m
+[32m+[m[32m     let add3=(a,b,c)=> a+b+c[m[41m [m
+[32m+[m[32m     let m3= add3(5,23,33);[m
+[32m+[m[32m     console.log(m3);[m
+[32m+[m[41m     [m
+[32m+[m[32m     let arr1=[1,2,3,4,5];[m
+[32m+[m[32m     let arr2=arr1;[m
+[32m+[m[32m     arr2[2]=100;[m
+[32m+[m[32m     console.log(arr1)[m
+[32m+[m[32m     let arr3=[...arr];[m
+[32m+[m[41m     [m
+[32m+[m[41m     [m
+[32m+[m[32m  </script>[m
+[32m+[m[41m  [m
+[32m+[m
+[32m+[m
+[32m+[m[32m  <body>[m
+[32m+[m[32m     <h1>VJS ES6+ Features</h1>[m
+[32m+[m[41m    [m
+[32m+[m[32m  </body>[m
+[32m+[m[32m</html>[m
+\ No newline at end of file[m
+[1mdiff --git a/react-dev/README.MD b/react-dev/README.MD[m
+[1mnew file mode 100644[m
+[1mindex 0000000..6e43e0c[m
+[1m--- /dev/null[m
+[1m+++ b/react-dev/README.MD[m
+[36m@@ -0,0 +1 @@[m
+[32m+[m[32mmath functions in js[m
+\ No newline at end of file[m
+[1mdiff --git a/react-dev/app.js b/react-dev/app.js[m
+[1mnew file mode 100644[m
+[1mindex 0000000..9516d36[m
+[1m--- /dev/null[m
+[1m+++ b/react-dev/app.js[m
+[36m@@ -0,0 +1,10 @@[m
+[32m+[m[32m//import exam, { stuName, study } from "./student.js";[m
+[32m+[m[32mimport empdata from "./emp.js";[m
+[32m+[m[32mimport * as vj from "./student.js";[m
+[32m+[m[32m// console.log(stuName);[m
+[32m+[m[32m// console.log("object");[m
+[32m+[m[32m// study();[m
+[32m+[m[32m// exam();[m
+[32m+[m[32mempdata();[m
+[32m+[m[32mvj.default();[m
+[32m+[m[32mconsole.log(vj.stuName);[m
+\ No newline at end of file[m
+[1mdiff --git a/react-dev/home.js b/react-dev/home.js[m
+[1mnew file mode 100644[m
+[1mindex 0000000..b6cf6d0[m
+[1m--- /dev/null[m
+[1m+++ b/react-dev/home.js[m
+[36m@@ -0,0 +1,72 @@[m
+[32m+[m[32m//document.getElementById("count").innerText=5[m
+[32m+[m
+[32m+[m[32mlet countA = 0 ;[m
+[32m+[m[32mlet countB = 0 ;[m
+[32m+[m[32mlet countEl = document.getElementById("scoreA-el")[m
+[32m+[m[32mlet saveEl = document.getElementById("scoreB-el")[m
+[32m+[m
+[32m+[m[32m//[m
+[32m+[m[32m//[m
+[32m+[m[32m//[m
+[32m+[m[32m//[m
+[32m+[m
+[32m+[m[32mfunction incrementA1() {[m
+[32m+[m[32m  countA = countA + 1[m
+[32m+[m[32m  document.getElementById("scoreA-el").innerText = countA[m
+[32m+[m[32m  let CountStrA = 1 + " -- "[m[41m  [m
+[32m+[m[32m  document.getElementById("saveA-el").textContent += CountStrA[m[41m     [m
+[32m+[m[32m  console.log(CountStrA)[m
+[32m+[m[32m}[m
+[32m+[m[32mfunction incrementA2() {[m
+[32m+[m[32m  countA = countA + 2[m
+[32m+[m[32m  document.getElementById("scoreA-el").textContent = countA[m
+[32m+[m[32m  let CountStrA = 2 + " -- "[m[41m  [m
+[32m+[m[32m  document.getElementById("saveA-el").textContent += CountStrA[m[41m     [m
+[32m+[m[32m  console.log(CountStrA)[m
+[32m+[m[32m}[m
+[32m+[m[32mfunction incrementA3() {[m
+[32m+[m[32m  countA = countA + 3[m
+[32m+[m[32m  document.getElementById("scoreA-el").textContent = countA[m
+[32m+[m[32m  let CountStrA = 3 + " -- "[m[41m  [m
+[32m+[m[32m  document.getElementById("saveA-el").textContent += CountStrA[m[41m     [m
+[32m+[m[32m  console.log(CountStrA)[m
+[32m+[m[32m}[m
+[32m+[m[32m///[m
+[32m+[m[32m///[m
+[32m+[m[32m///[m
+[32m+[m[32m///[m
+[32m+[m
+[32m+[m[32mfunction incrementB1() {[m
+[32m+[m[32m  countB = countB + 1[m
+[32m+[m[32m  document.getElementById("scoreB-el").textContent = countB[m
+[32m+[m[32m  let CountStrB = 1 + " -- "[m[41m  [m
+[32m+[m[32m  document.getElementById("saveB-el").textContent += CountStrB[m[41m     [m
+[32m+[m[32m  console.log(CountStrB)[m
+[32m+[m[32m}[m
+[32m+[m[32mfunction incrementB2() {[m
+[32m+[m[32m  countB = countB + 2[m
+[32m+[m[32m  document.getElementById("scoreB-el").textContent = countB[m
+[32m+[m[32m  let CountStrB = 2 + " -- "[m[41m  [m
+[32m+[m[32m  document.getElementById("saveB-el").textContent += CountStrB[m[41m     [m
+[32m+[m[32m  console.log(CountStrB)[m
+[32m+[m[32m}[m
+[32m+[m[32mfunction incrementB3() {[m
+[32m+[m[32m  countB = countB + 3[m
+[32m+[m[32m  document.getElementById("scoreB-el").textContent = countB[m
+[32m+[m[32m  let CountStrB = 3  + " -- "[m[41m  [m
+[32m+[m[32m  document.getElementById("saveB-el").textContent += CountStrB[m[41m     [m
+[32m+[m[32m  console.log(CountStrB)[m
+[32m+[m[32m}[m
+[32m+[m[32m//[m
+[32m+[m[32m//[m
+[32m+[m[32m//[m
+[32m+[m[32m//[m
+[32m+[m[32m//[m
+[32m+[m[32mfunction save() {[m
+[32m+[m[32m  let CountStr = countA + " -- "[m[41m  [m
+[32m+[m[32m  document.getElementById("save-el").textContent += CountStr[m[41m    [m
+[32m+[m[32m  console.log(CountStr)[m
+[32m+[m[32m  console.log("save")[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m
+[1mdiff --git a/react-dev/index.html b/react-dev/index.html[m
+[1mnew file mode 100644[m
+[1mindex 0000000..5b1a490[m
+[1m--- /dev/null[m
+[1m+++ b/react-dev/index.html[m
+[36m@@ -0,0 +1,11 @@[m
+[32m+[m[32m<!DOCTYPE html>[m[41m[m
+[32m+[m[32m<html lang="en">[m[41m[m
+[32m+[m[32m<head>[m[41m[m
+[32m+[m[32m  <title>Document</title>[m[41m[m
+[32m+[m[32m</head>[m[41m[m
+[32m+[m[32m<body>[m[41m[m
+[32m+[m[32m<h1>Module ( Import Export)</h1>[m[41m [m
+[32m+[m[41m[m
+[32m+[m[32m<script src="app.js" type="module" />[m[41m[m
+[32m+[m[32m</body>[m[41m[m
+[32m+[m[32m</html>[m
+\ No newline at end of file[m
+[1mdiff --git a/react-dev/student.js b/react-dev/student.js[m
+[1mnew file mode 100644[m
+[1mindex 0000000..70eda4f[m
+[1m--- /dev/null[m
+[1m+++ b/react-dev/student.js[m
+[36m@@ -0,0 +1,14 @@[m
+[32m+[m[32mexport let stuName = "Ravi";[m[41m[m
+[32m+[m[32mexport let study = function () {[m[41m[m
+[32m+[m[32m  console.log("This is study function...");[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32m  console.log("I will attend Winter training on regular basis");[m[41m[m
+[32m+[m[32m};[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mexport default function exam() {[m[41m[m
+[32m+[m[32m  console.log("Will give exam....");[m[41m[m
+[32m+[m[32m}[m[41m[m
+[32m+[m[41m[m
+[32m+[m[32mexport function exam1() {[m[41m[m
+[32m+[m[32m  console.log("Will give exam....");[m[41m[m
+[32m+[m[32m}[m[41m[m
