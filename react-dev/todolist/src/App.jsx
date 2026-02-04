@@ -1,24 +1,16 @@
 import TodoApp from "./componentTodo/TodoApp"
 import AppName from "./componentTodo/AppName"
-import TodoInput from "./componentTodo/TodoInput";
-import EmptyMessage from "./componentTodo/EmptyMessage";
 import styles from "./TodoCSS.module.css"
 
-const Todos = {}
-
 let app = () => {
+
     return(
         <div className={styles.containerbox}>
             <AppName appName="Todo App" />
             <br />
         <TodoApp />
-        {Todos.length === 0 && (
-            <h1 className="text-center text-success">
-                No Todo. <br /> Enjoy your Day. :){" "}
-        </h1>
-    ) }
 
-</div>
+    </div>
 )
 
 };

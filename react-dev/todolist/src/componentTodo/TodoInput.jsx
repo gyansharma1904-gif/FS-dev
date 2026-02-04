@@ -5,16 +5,17 @@ import {
 import {
     IoIosAdd
 } from "react-icons/io";
+import TodoSorter from "./TodoSorter";
 import styles from "../TodoCSS.module.css";
 
 const TodoInput = ({
     onNewTodo, handleNewData
 }) => {
 
-    const Todos = [{},
+    const todoItem = [{},
     ];
     const [todoItems,
-        setTodoItems] = useState(Todos);
+        setTodoItems] = useState(todoItem);
     const [name,
         setName] = useState("");
     const [date,
@@ -26,11 +27,9 @@ const TodoInput = ({
     //     e.target.value = ""; // to clear input after enter
     //     //}
     // };
-
     // const handleDateChange = (e) => {
     //     setDate (e.target.value);
     // };
-
 
     const handleOnClick = () => {
         if (name.trim() === "") return;
@@ -41,7 +40,6 @@ const TodoInput = ({
     };
     //update the todos
     //<button onClick={handleClick}>
-
 
     return (
         <>
@@ -58,7 +56,6 @@ const TodoInput = ({
                 <button className={styles.btnAdd}onClick={handleOnClick}><IoIosAdd /></button>
             </div>
 
-
         </div>
         <div className={styles.DateBox}>
             <input type="date"
@@ -66,8 +63,8 @@ const TodoInput = ({
             value={date}
             onChange={(e) => setDate(e.target.value)}
             />
-
     </div>
+    <TodoSorter/>
 </>
 );
 };

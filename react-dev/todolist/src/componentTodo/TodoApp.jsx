@@ -4,6 +4,8 @@ import {
 } from "react";
 
 // import TodoContext from "../store/TodoDataStore";
+import EmptyMessage from "./EmptyMessage"; //line 50
+import TodoCounter from "./TodoCounter";
 import TodoInput from "./TodoInput";
 import TodoItems from "./TodoItems";
 
@@ -18,32 +20,34 @@ export default function TodoApp() {
         //         todoDate: "22-01-2026",
         //     },
     ];
-
     // useContext(TodoContext);
-    const [count,
-        setCount] = useState(0);
+    // const [count,
+    //     setCount] = useState(0);
 
     const [todoItems,
         setTodoItems] = useState(Todos);
 
     // function ADD TODO
-    const handleNewData = (todoName, todoDate, count) => {
+    const handleNewData = (todoName, todoDate) => {
         setTodoItems([
             ...todoItems,
             {
                 todoName, todoDate
             }]);
-        setCount(count+1)
+        // setCount(count+1)
     };
 
     // Delete Todo
-    const handleDeleteData = (todoName, count) => {
+    const handleDeleteData = (todoName) => {
         const newData = todoItems.filter(
             (item) => item.todoName !== todoName
         );
         setTodoItems(newData);
-        setCount(count-1)
+        // setCount(count-1)
     };
+
+    //todoItems length
+    const totalTodos = todoItems.length;
 
     const editTodo = (todoName)=> {}
 
@@ -51,11 +55,14 @@ export default function TodoApp() {
     return (
         // <TodoContext.Provider value={TodoItems}></>
         <div className="container">
+            <TodoCounter totalTodos={totalTodos} />
+            {/*<h1>{count}</h1>*/}
             <TodoInput onNewTodo={handleNewData} />
             <TodoItems
                 todoItems={todoItems}
                 onDeleteTodo={handleDeleteData}
                 />
+            <EmptyMessage todoItems={todoItems} />
 
         </div>
     );
@@ -67,8 +74,6 @@ export default function TodoApp() {
     // import {
     //    useState
     // } from "react";
-
-
 
     // export default function TodoApp() {
     //    let todoItemlist = [{
@@ -119,9 +124,6 @@ export default function TodoApp() {
     //       </div>
     //    );
     // }
-
-
-
 
 
     //    // import TodoInput from "./TodoInput"

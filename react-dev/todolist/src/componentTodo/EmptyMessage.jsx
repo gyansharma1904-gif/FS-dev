@@ -1,14 +1,16 @@
+import styles from "../TodoCSS.module.css";
+
 const EmptyMessage = ({
-    Todos
+    todoItems
 }) => {
     return (
-        <>
-            {Todos.length === 0 && (
+        <div className={styles.message}>
+            {todoItems.length === 0 && (
                 <h1 className="text-center text-success">
-                    No Todo. <br /> Enjoy your Day. :){" "}
+                    No Todo. <br /> Enjoy your Day :){" "}
             </h1>
         )}
-    </>
+    </div>
 );
 };
 

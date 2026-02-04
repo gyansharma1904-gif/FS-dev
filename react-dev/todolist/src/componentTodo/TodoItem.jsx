@@ -30,6 +30,7 @@ const TodoItem = ({
                     {todoDate}
                 </small>
             </div>
+
             <div style={ { paddingTop: "6px" }}>
                 <button
                     className={styles.btnEdit}
