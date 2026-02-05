@@ -64,7 +64,6 @@ const TodoInput = ({
             onChange={(e) => setDate(e.target.value)}
             />
     </div>
-    <TodoSorter/>
 </>
 );
 };

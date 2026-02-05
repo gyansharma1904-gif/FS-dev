@@ -1,7 +1,7 @@
 import TodoItem from "./TodoItem";
 
 const TodoItems = ({
-    todoItems, onDeleteTodo
+    todoItems, onDeleteTodo,toggleTodo
 }) => {
     return (
         <>
@@ -10,7 +10,9 @@ const TodoItems = ({
                     key={todoItem.todoName}
                     todoName={todoItem.todoName}
                     todoDate={todoItem.todoDate}
+                    completed={todoItem.completed}
                     handleDeleteData={onDeleteTodo}
+                    toggleTodo={toggleTodo}
                     />
             )}
         </>

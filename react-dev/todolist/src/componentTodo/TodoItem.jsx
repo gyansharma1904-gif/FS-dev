@@ -6,7 +6,7 @@ import {
 import styles from "../TodoCSS.module.css";
 
 const TodoItem = ({
-    todoName, todoDate, handleDeleteData, editTodo
+    todoName, todoDate, completed, handleDeleteData, toggleTodo, editTodo
 }) => {
     const myStyle = {
         color: "white",
@@ -18,9 +18,11 @@ const TodoItem = ({
     };
     return (
         <div className={styles.TodoOutput}>
+            
             <div style={ { marginLeft: "0px", width: "300px", paddingTop: "10px", lineHeight: 0.3, fontSize: 16, fontFamily: "Sans-Serif" }}>
                 {/* inline css example
                     camelCased Property Names example (backgroundColor)*/}
+
                 <p>
                     {todoName}
                     {/*Create a style object named myStyle:
@@ -32,6 +34,12 @@ const TodoItem = ({
             </div>
 
             <div style={ { paddingTop: "6px" }}>
+                <button
+                className="btn btn-sm btn-success"
+                onClick={() => toggleTodo(todoName)}
+                >
+                ✓
+            </button>
                 <button
                     className={styles.btnEdit}
                     onClick={()=>editTodo(todoName)}>edit</button>

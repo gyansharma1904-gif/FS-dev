@@ -6,6 +6,8 @@ import {
 // import TodoContext from "../store/TodoDataStore";
 import EmptyMessage from "./EmptyMessage"; //line 50
 import TodoCounter from "./TodoCounter";
+import TodoSorter from "./TodoSorter";
+
 import TodoInput from "./TodoInput";
 import TodoItems from "./TodoItems";
 
@@ -26,13 +28,20 @@ export default function TodoApp() {
 
     const [todoItems,
         setTodoItems] = useState(Todos);
+    const [filter,
+        setFilter] = useState("ALL");
 
     // function ADD TODO
-    const handleNewData = (todoName, todoDate) => {
+    const handleNewData = (todoName,
+        todoDate,
+    ) => {
         setTodoItems([
             ...todoItems,
             {
-                todoName, todoDate
+                todoName,
+                todoDate,
+                completed: false
+
             }]);
         // setCount(count+1)
     };
@@ -44,6 +53,22 @@ export default function TodoApp() {
         );
         setTodoItems(newData);
         // setCount(count-1)
+    };
+    const filteredTodos = todoItems.filter((todo) => {
+        if (filter === "COMPLETED") return todo.completed;
+        if (filter === "UNCOMPLETED") return !todo.completed;
+        return true; // ALL
+    });
+
+    const toggleTodo = (todoName) => {
+        setTodoItems((prevTodos) =>
+            prevTodos.map((todo) =>
+                todo.todoName === todoName
+                ? {
+                    ...todo, completed: !todo.completed
+                }: todo
+            )
+        );
     };
 
     //todoItems length
@@ -58,11 +83,14 @@ export default function TodoApp() {
             <TodoCounter totalTodos={totalTodos} />
             {/*<h1>{count}</h1>*/}
             <TodoInput onNewTodo={handleNewData} />
+            <TodoSorter filter={filter} setFilter={setFilter} />
             <TodoItems
-                todoItems={todoItems}
+                todoItems={filteredTodos}
                 onDeleteTodo={handleDeleteData}
+                toggleTodo={toggleTodo}
                 />
             <EmptyMessage todoItems={todoItems} />
+
 
         </div>
     );
