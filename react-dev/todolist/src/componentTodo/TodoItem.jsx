@@ -1,6 +1,12 @@
 import {
     AiTwotoneDelete
 } from "react-icons/ai";
+import {
+    CiBookmarkCheck
+} from "react-icons/ci";
+import {
+    useState
+} from "react";
 // react icons useage
 
 import styles from "../TodoCSS.module.css";
@@ -16,9 +22,13 @@ const TodoItem = ({
         borderRadius: 5,
         fontFamily: "Sans-Serif"
     };
+
+    const [clicked,
+        setClicked] = useState(false);
+
     return (
         <div className={styles.TodoOutput}>
-            
+
             <div style={ { marginLeft: "0px", width: "300px", paddingTop: "10px", lineHeight: 0.3, fontSize: 16, fontFamily: "Sans-Serif" }}>
                 {/* inline css example
                     camelCased Property Names example (backgroundColor)*/}
@@ -35,11 +45,12 @@ const TodoItem = ({
 
             <div style={ { paddingTop: "6px" }}>
                 <button
-                className="btn btn-sm btn-success"
-                onClick={() => toggleTodo(todoName)}
-                >
-                ✓
-            </button>
+                    className={`btn btn-sm ${completed ? "btn-secondary": "btn-outline-success"
+                    }`}
+                    onClick={() => toggleTodo(todoName) }
+                    >
+                    <CiBookmarkCheck />
+                </button>
                 <button
                     className={styles.btnEdit}
                     onClick={()=>editTodo(todoName)}>edit</button>
