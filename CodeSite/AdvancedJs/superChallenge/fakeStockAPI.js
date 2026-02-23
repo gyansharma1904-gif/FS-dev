@@ -1,4 +1,4 @@
- function getStockData() {
+export function getStockData() {
   
   // function getRandomDecimal(min, max, decimalPlaces) {
   //   const multiplier = Math.pow(10, decimalPlaces);
@@ -29,7 +29,7 @@
     sym:"GS",
     // price:randomNum,
     price:(Math.random()*3).toFixed(2),
-    stockRate:stockRate,
+    // stockRate:stockRate,
     // time:newTime,
     time:new Date().toLocaleTimeString()
     
@@ -37,9 +37,9 @@
 }
 // console.log(getStockData());
 
-export default
-   {
-  getStockData
-};
+// export default
+//   {
+//   getStockData,
+// };
 
 

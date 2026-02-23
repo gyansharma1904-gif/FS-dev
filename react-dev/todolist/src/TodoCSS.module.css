@@ -6,7 +6,9 @@ body{
 
 .containerbox{
     border:0px solid darkblue;
-    min-width: 550px;
+    /* min-width: 550px; */
+    min-width: auto;
+    
     max-width: 100%;
     min-height: 200px;
     max-height:100%;
@@ -16,6 +18,12 @@ body{
     padding-bottom: 10PX;
     
 }
+/* @media (min-width: 768px) {
+  .container {
+    width: 768px;
+    margin: 0 auto;
+  }
+}    */
 
 .inputTodo{
     width:100%;
