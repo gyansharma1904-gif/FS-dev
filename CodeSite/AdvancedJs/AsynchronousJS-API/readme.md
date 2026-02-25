@@ -29,5 +29,13 @@ we will be studying
     
     
 ---------------------------------------------------------------------------------------------
+response.ok
+
+---------------------------------------------------------------------------------------------
+status Code Basics
+  
+  200-299 : successful response(true)
+  404 : not Found (False)
+  500 : server Error (False)
 
 cd FS-dev/CodeSite/AdvancedJs/AsynchronousJS-API

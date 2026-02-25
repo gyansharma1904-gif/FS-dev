@@ -1,30 +1,33 @@
 
-// try{async function getset() {
+try{async function getset() {
   
-// const test01 = await fetch('https://api.scrimba.com/bored/api/activity');
-// const data =await test01.json();
+const test01 = await fetch('https://dog.ceo/api/breeds/image/random');
+const data =await test01.json();
   
-// console.log(data);}
-// } catch(error) {
-//   console.log (error)
-//   throw new Error('Promise Catch:')
-  
-// } finally {
-//   console.log('cool');
-// }
+console.log(data);
+  getset();
+}
 
-
-try{
-  const test01 = await fetch('https://api.scrimba.com/bored/api/activity');
-  const data =await test01.json();
-  console.log(data);
 } catch(error) {
-  console.log (error);
-  throw new Error('Promise Catch:');
+  console.log (error)
+  throw new Error('Promise Catch:')
   
 } finally {
   console.log('cool');
 }
+
+
+// try{
+//   const test01 = await fetch('https://api.scrimba.com/dog.ceo/api/breeds/image/random');
+//   const data =await test01.json();
+//   console.log(data);
+// } catch(error) {
+//     console.log (error);
+//     throw new Error('Promise Catch:');
+  
+// } finally {
+//   console.log('cool');
+// }
 
 
 
@@ -40,4 +43,4 @@ try{
     
 //   })
 //   .catch(err => console.error(err))
-//   .finally (()=>console.log('error completed'));
+//   .finally (()=>console.log('completed'));
