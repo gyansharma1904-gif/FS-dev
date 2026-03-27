@@ -1,20 +1,18 @@
+console.log("hello");
+// try{async function getset() {
+  
+// const test01 = await fetch('https://dog.ceo/api/breeds/image/random');
+// const data =await test01.json();
+  
+// console.log(data);
+// }
 
-try{async function getset() {
-  
-const test01 = await fetch('https://dog.ceo/api/breeds/image/random');
-const data =await test01.json();
-  
-console.log(data);
-  getset();
-}
-
-} catch(error) {
-  console.log (error)
-  throw new Error('Promise Catch:')
-  
-} finally {
-  console.log('cool');
-}
+// } catch(error) {
+//   console.log (error)
+//   throw new Error('Promise Catch:')
+// } finally {
+//   console.log('cool');
+// }
 
 
 // try{
