@@ -1,0 +1,10 @@
+//import exam, { stuName, study } from "./student.js";
+import empdata from "./emp.js";
+import * as vj from "./student.js";
+// console.log(stuName);
+// console.log("object");
+// study();
+// exam();
+empdata();
+vj.default();
+console.log(vj.stuName);

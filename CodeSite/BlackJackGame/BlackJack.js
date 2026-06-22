@@ -1,16 +1,15 @@
 //   javaScript file for BlackJack Game
-//
 let cards = [];
 let sum = 0;
 const person = {
    Name: "John",
-   money: 146
+   money: 146,
 };
-
 
 let hasBlascJack = false;
 let isAlive = false;
-let status = "";
+var status= " ";
+let player=person;
 
 function getRandomCard() {
    let floorNum = Math.floor(Math.random()*13)+1;
@@ -33,14 +32,14 @@ function startGame() {
       secondCard];
    // console.log(cards)
    sum = firstCard + secondCard;
-   renderGame()
+   renderGame();
 }
 
 
 function renderGame() {
-   document.getElementById("card-el").innerText = "Cards:"
+   document.getElementById("card-el").innerText = "Cards:";
    for (let i = 0; i < cards.length; i += 1) {
-      document.getElementById("card-el").innerText += " "+cards[i] + " "
+      document.getElementById("card-el").innerText += " "+cards[i] + " ";
       //console.log(cards)
    }
    //document.getElementById("card-el").innerText = "cards:" + " "+ cards[0]+" "+cards[1] ;
@@ -56,15 +55,15 @@ function renderGame() {
    }
    document.getElementById("status-el").innerText = status;
    document.getElementById("sum-el").innerText = "Sum:"+" "+sum;
-   updatedetails()
+   updatedetails();
 }
-console.log(player.Name)
+console.log(player.Name);
 function newCard() {
    if (isAlive && BlackJack) {
       let newCard1 = getRandomCard();
-      cards.push(newCard1)
-      sum += newCard1
-      renderGame()
+      cards.push(newCard1);
+      sum += newCard1;
+      renderGame();
    }
 }
 
